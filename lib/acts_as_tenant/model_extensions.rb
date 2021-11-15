@@ -176,13 +176,13 @@ module ActsAsTenant
             model
           end
 
-          define_method "#{ActsAsTenant.tenant_klass.to_s}" do
-            if !ActsAsTenant.current_tenant.nil? && send(fkey) == ActsAsTenant.current_tenant.send(pkey)
-              return ActsAsTenant.current_tenant
-            else
-              super()
-            end
-          end
+          # define_method "#{ActsAsTenant.tenant_klass.to_s}" do
+          #   if !ActsAsTenant.current_tenant.nil? && send(fkey) == ActsAsTenant.current_tenant.send(pkey)
+          #     return ActsAsTenant.current_tenant
+          #   else
+          #     super()
+          #   end
+          # end
         end
         include to_include
 
